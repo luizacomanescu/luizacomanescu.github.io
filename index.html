@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luiza Comanescu — Backend Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1C1815;
+    --bg-raised:#252019;
+    --bg-raised-2:#2C2620;
+    --nude:#D8C7B8;
+    --text:#EDE6DD;
+    --gold:#96654A;
+    --muted:#8A7A6B;
+    --hairline: rgba(182,155,111,0.35);
+    --max-w: 1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--text);
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max-w); margin:0 auto; padding:0 32px;}
+  section{padding:96px 0;}
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+    margin-bottom:18px;
+    display:inline-block;
+  }
+  .rule{
+    border:none;
+    border-top:1px solid var(--hairline);
+    margin:0 0 64px 0;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 28px;
+    border-radius:100px;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:0.02em;
+    text-decoration:none;
+    transition:all 0.25s ease;
+    cursor:pointer;
+  }
+  .btn-primary{
+    background:var(--gold);
+    color:#1C1815;
+    border:1px solid var(--gold);
+  }
+  .btn-primary:hover{
+    background:transparent;
+    color:var(--gold);
+  }
+  .btn-ghost{
+    background:transparent;
+    color:var(--text);
+    border:1px solid var(--hairline);
+  }
+  .btn-ghost:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+  }
+
+  /* NAV */
+  nav{
+    position:fixed; top:0; left:0; right:0;
+    z-index:100;
+    background:rgba(28,24,21,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--hairline);
+  }
+  nav .wrap{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:20px 32px;
+  }
+  .nav-name{font-family:'Fraunces', serif; font-size:18px; letter-spacing:0.02em; display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); cursor:pointer;}
+  .nav-dot{
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--gold);
+    display:inline-block;
+    flex-shrink:0;
+  }
+  .nav-links{display:flex; gap:32px; font-size:14px; align-items:center;}
+  .nav-links a{text-decoration:none; color:var(--nude); transition:color 0.2s;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-links .btn{padding:10px 20px; font-size:13px;}
+  @media(max-width:720px){ .nav-links a:not(.btn){display:none;} }
+
+  /* HERO */
+  .hero{
+    padding:180px 0 80px 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{position:relative; z-index:2;}
+  .hero h1{
+    font-size:clamp(36px, 6vw, 60px);
+    line-height:1.08;
+    max-width:780px;
+  }
+  .hero .tagline{
+    font-size:19px;
+    color:var(--nude);
+    max-width:560px;
+    margin-top:24px;
+    font-weight:300;
+  }
+  .available-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid var(--hairline);
+    padding:8px 16px;
+    border-radius:100px;
+    margin-bottom:28px;
+  }
+  .available-pill .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 8px var(--gold);
+  }
+  .hero-ctas{
+    display:flex; gap:16px; margin-top:40px; flex-wrap:wrap;
+  }
+
+  /* signature svg */
+  .signature{
+    position:absolute;
+    top:120px; right:20px;
+    width:440px;
+    max-width:45vw;
+    opacity:0.9;
+    z-index:1;
+  }
+  @media(max-width:900px){ .signature{display:none;} }
+
+  /* STATS BANNER */
+  .stats{
+    border:1px solid var(--hairline);
+    background:var(--bg-raised);
+    border-radius:20px;
+    max-width:var(--max-w);
+    margin:0 auto 0 auto;
+  }
+  .stats-outer{padding:0 32px;}
+  .stats .wrap{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    padding:48px 32px;
+    gap:24px;
+  }
+  .stat{text-align:center;}
+  .stat .num{
+    font-family:'Fraunces', serif;
+    font-size:38px;
+    color:var(--gold);
+    font-weight:400;
+  }
+  .stat .label{
+    font-size:13px;
+    color:var(--muted);
+    margin-top:6px;
+    letter-spacing:0.02em;
+  }
+  @media(max-width:640px){ .stats .wrap{grid-template-columns:1fr; gap:32px;} }
+
+  /* ABOUT */
+  .about-content{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:64px;
+    align-items:start;
+  }
+  .about-content h2{font-size:34px; max-width:280px;}
+  .about-body p{
+    color:var(--nude);
+    font-size:17px;
+    font-weight:300;
+    max-width:600px;
+  }
+  @media(max-width:800px){ .about-content{grid-template-columns:1fr;} }
+
+  /* SERVICES */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:16px;
+  }
+  .service-card{
+    background:var(--bg-raised);
+    padding:40px;
+    border-radius:16px;
+    border:1px solid var(--hairline);
+  }
+  .service-card .num{
+    font-family:'Fraunces', serif;
+    color:var(--gold);
+    font-size:14px;
+    letter-spacing:0.1em;
+  }
+  .service-card h3{
+    font-size:21px;
+    margin-top:16px;
+    margin-bottom:12px;
+  }
+  .service-card p{
+    color:var(--muted);
+    font-size:15px;
+    margin:0;
+  }
+  @media(max-width:700px){ .services-grid{grid-template-columns:1fr;} }
+
+  /* PROJECT / CLIENT CARDS */
+  .project-card{
+    background:var(--bg-raised);
+    border:1px solid var(--hairline);
+    padding:40px;
+    margin-bottom:24px;
+    border-radius:16px;
+  }
+  .project-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:8px;
+  }
+  .project-title{font-size:23px;}
+  .project-meta{
+    font-size:12px;
+    color:var(--gold);
+    border:1px solid var(--hairline);
+    padding:5px 12px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    border-radius:100px;
+  }
+  .project-dates{
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:20px;
+  }
+  .project-card p.desc{
+    color:var(--nude);
+    font-size:15.5px;
+    font-weight:300;
+    max-width:680px;
+  }
+  .tags{
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin-top:20px;
+  }
+  .tag{
+    font-size:12px;
+    color:var(--muted);
+    border:1px solid var(--hairline);
+    padding:5px 12px;
+    border-radius:100px;
+  }
+  .project-links{margin-top:20px; display:flex; gap:20px;}
+  .project-links a{
+    font-size:13px;
+    color:var(--gold);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .project-links a:hover{border-bottom:1px solid var(--gold);}
+
+  /* BACKGROUND */
+  .bg-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:24px 0;
+    border-bottom:1px solid var(--hairline);
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .bg-item:first-child{border-top:1px solid var(--hairline);}
+  .bg-item .role{font-size:18px; font-family:'Fraunces', serif;}
+  .bg-item .co{color:var(--muted); font-size:14px;}
+  .bg-item .dates{font-size:13px; color:var(--muted);}
+  .bg-desc{color:var(--nude); font-size:15px; font-weight:300; max-width:640px; margin-top:6px;}
+
+  /* TESTIMONIALS */
+  .testi-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:24px;
+  }
+  @media(max-width:800px){ .testi-grid{grid-template-columns:1fr;} }
+  .testi-card{
+    background:var(--bg-raised);
+    border:1px solid var(--hairline);
+    padding:32px;
+    border-radius:16px;
+  }
+  .testi-card p{
+    color:var(--nude);
+    font-size:15px;
+    font-weight:300;
+    font-style:italic;
+  }
+  .testi-name{
+    font-family:'Fraunces', serif;
+    font-size:16px;
+    margin-top:16px;
+  }
+  .testi-role{
+    font-size:12.5px;
+    color:var(--muted);
+    margin-top:2px;
+  }
+  .testi-card.wide{grid-column:1 / -1;}
+
+  /* CONTACT */
+  .contact-section{text-align:center;}
+  .contact-section h2{font-size:clamp(30px,5vw,44px); max-width:640px; margin:0 auto;}
+  .contact-section .sub{
+    color:var(--nude); font-size:17px; font-weight:300;
+    max-width:520px; margin:20px auto 40px auto;
+  }
+  .contact-ctas{
+    display:flex; justify-content:center; gap:16px; flex-wrap:wrap;
+  }
+  footer{
+    border-top:1px solid var(--hairline);
+    padding:32px 0;
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+  }
+  footer a{color:var(--muted); text-decoration:none; margin:0 10px;}
+  footer a:hover{color:var(--gold);}
+
+  .section-head{margin-bottom:56px;}
+  .section-head h2{font-size:34px;}
+
+  ::selection{background:var(--gold); color:#1C1815;}
+
+  /* WRITING */
+  .writing-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+  @media(max-width:800px){ .writing-grid{grid-template-columns:1fr;} }
+  .writing-card{
+    background:var(--bg-raised);
+    border:1px solid var(--hairline);
+    border-radius:16px;
+    padding:32px;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    transition:border-color 0.25s ease, transform 0.25s ease;
+  }
+  .writing-card:hover{
+    border-color:var(--gold);
+    transform:translateY(-2px);
+  }
+  .writing-card .eyebrow-small{
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:14px;
+  }
+  .writing-card h3{
+    font-size:19px;
+    line-height:1.3;
+    margin-bottom:12px;
+  }
+  .writing-card p{
+    color:var(--muted);
+    font-size:14px;
+    margin:0;
+    flex-grow:1;
+  }
+  .writing-card .read-more{
+    margin-top:20px;
+    font-size:13px;
+    color:var(--gold);
+  }
+  .writing-more{
+    text-align:center;
+    margin-top:40px;
+  }
+  .writing-more a{
+    font-size:14px;
+    color:var(--gold);
+    text-decoration:none;
+    border-bottom:1px solid var(--hairline);
+    padding-bottom:2px;
+  }
+  .writing-more a:hover{border-color:var(--gold);}
+
+  /* SCROLL REVEAL */
+  .reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="nav-name"><span class="nav-dot"></span>Luiza Comanescu</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact" class="btn btn-primary">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <svg class="signature" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#B69B6F" stroke-width="1" fill="none" opacity="0.7">
+      <line x1="250" y1="250" x2="120" y2="140"/>
+      <line x1="250" y1="250" x2="380" y2="120"/>
+      <line x1="250" y1="250" x2="410" y2="270"/>
+      <line x1="250" y1="250" x2="330" y2="400"/>
+      <line x1="250" y1="250" x2="150" y2="380"/>
+      <line x1="250" y1="250" x2="90" y2="260"/>
+      <line x1="120" y1="140" x2="70" y2="90"/>
+      <line x1="380" y1="120" x2="440" y2="80"/>
+      <line x1="410" y1="270" x2="470" y2="300"/>
+    </g>
+    <g fill="#B69B6F">
+      <circle cx="250" cy="250" r="10"/>
+      <circle cx="120" cy="140" r="5"/>
+      <circle cx="380" cy="120" r="5"/>
+      <circle cx="410" cy="270" r="5"/>
+      <circle cx="330" cy="400" r="5"/>
+      <circle cx="150" cy="380" r="5"/>
+      <circle cx="90" cy="260" r="5"/>
+      <circle cx="70" cy="90" r="3"/>
+      <circle cx="440" cy="80" r="3"/>
+      <circle cx="470" cy="300" r="3"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="available-pill"><span class="dot"></span>Available for contract engagements</div>
+    <h1>Backend engineer for hire. Scalable systems, built to last.</h1>
+    <p class="tagline">I take on contract engagements for teams that need legacy systems modernized, APIs built right, and high-volume processing pipelines running fast and clean.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">Book a call</a>
+      <a href="#work" class="btn btn-ghost">View my work</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats-outer reveal">
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat">
+        <div class="num">2</div>
+        <div class="label">Client engagements</div>
+      </div>
+      <div class="stat">
+        <div class="num">2</div>
+        <div class="label">Products acquired by other companies</div>
+      </div>
+      <div class="stat">
+        <div class="num">5+</div>
+        <div class="label">Years building production systems</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="about" class="reveal">
+  <div class="wrap">
+    <div class="about-content">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2>Systems that hold up under real pressure.</h2>
+      </div>
+      <div class="about-body">
+        <p>I'm a software engineer with ~5 years of experience building scalable backend systems, with a strong focus on Java and Spring Boot. I take on contract engagements for teams that need to migrate legacy systems to microservices, build reliable APIs, or get high-volume processing pipelines running fast and clean.</p>
+        <p>Past engagements have contributed to two product acquisitions — proof that the systems I build hold up under real business pressure, not just in a demo. I care about code the next engineer can actually understand, not just code that works today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2>What I take on</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="num">01</div>
+        <h3>Monolith-to-microservices migration</h3>
+        <p>De-risking legacy system transitions — breaking apart monoliths without breaking the business.</p>
+      </div>
+      <div class="service-card">
+        <div class="num">02</div>
+        <h3>API design & development</h3>
+        <p>RESTful services and event-driven systems, built with Kafka for reliable, async communication.</p>
+      </div>
+      <div class="service-card">
+        <div class="num">03</div>
+        <h3>Cloud infrastructure & serverless</h3>
+        <p>AWS-native builds — Lambda, SQS/SNS, CloudFormation — designed to scale without babysitting servers.</p>
+      </div>
+      <div class="service-card">
+        <div class="num">04</div>
+        <h3>Performance optimization</h3>
+        <p>The "hours to seconds" kind of work — finding the bottleneck and actually fixing it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Selected client work</span>
+      <h2>Engagements, not just tasks</h2>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-title">Instalment Loan Platform — Paymentology</div>
+        <div class="project-meta">Contract engagement</div>
+      </div>
+      <div class="project-dates">Oct 2023 – Jan 2025</div>
+      <p class="desc">Designed and built instalment loan capabilities for credit clients, including RESTful APIs and Kafka adapters. Led the migration from a monolithic system to microservices, improving scalability and reliability — a transformation that contributed to the product's acquisition by AstraTech.</p>
+      <div class="tags">
+        <span class="tag">Java 21</span>
+        <span class="tag">Spring Boot</span>
+        <span class="tag">Kafka</span>
+        <span class="tag">Docker</span>
+        <span class="tag">AWS</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-title">Serverless Credit Processing — BOX Processing</div>
+        <div class="project-meta">Contract engagement</div>
+      </div>
+      <div class="project-dates">Jun 2021 – Dec 2022</div>
+      <p class="desc">Built a high-performance serverless API gateway for credit and loan products using AWS Lambda. Reduced credit processing execution time from hours to seconds — a result that led to the product's acquisition by Paymentology.</p>
+      <div class="tags">
+        <span class="tag">Java 11</span>
+        <span class="tag">AWS Lambda</span>
+        <span class="tag">SQS/SNS</span>
+        <span class="tag">CloudFormation</span>
+        <span class="tag">MySQL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Personal projects</span>
+      <h2>Building on my own time</h2>
+    </div>
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-title">Modeva</div>
+      </div>
+      <p class="desc">A visual search engine that turns inspiration images into real products — match a look you love to real items across brands and price points.</p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">JavaScript</span>
+      </div>
+      <div class="project-links">
+        <a href="https://xp42p2rr9p.eu-west-2.awsapprunner.com/" target="_blank" rel="noopener">Live demo →</a>
+        <a href="https://github.com/luizacomanescu/fashion-search-mvp" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="background" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Background</span>
+      <h2>Before going independent</h2>
+    </div>
+    <div class="bg-item">
+      <div>
+        <div class="role">Software Engineer</div>
+        <div class="co">Visa · Full-time employment</div>
+        <div class="bg-desc">Developed Spring MVC APIs for Disney and HSBC Bank, handling secure, high-scale payment transactions — tokenization for Disney cardholders and settlement file generation for HSBC.</div>
+      </div>
+      <div class="dates">Jun 2019 – Aug 2020</div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Testimonials</span>
+      <h2>What people I've worked with say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>"Worked with Luiza across two companies over three years. She's a creative, energetic engineer, strong at both building new features and diagnosing tricky bugs, and a collaborative leader who cares about the whole team's wellbeing."</p>
+        <div class="testi-name">Rob MacMillan</div>
+        <div class="testi-role">Group Product Manager, Paymentology · managed Luiza directly</div>
+      </div>
+      <div class="testi-card">
+        <p>"Hired Luiza straight out of university — one of my best decisions. She's excellent with Java and microservices design, and brings enthusiasm and positive energy to her team every day."</p>
+        <div class="testi-name">Mike Charles</div>
+        <div class="testi-role">Architecture, Data, AI & Cloud · managed Luiza directly</div>
+      </div>
+      <div class="testi-card">
+        <p>"We worked together for almost four years on a fintech project. As a frontend developer, I valued her consistent, practical problem-solving — she's reliable, helpful, and generous with her knowledge."</p>
+        <div class="testi-name">Iryna Dmytruk</div>
+        <div class="testi-role">Software Engineer · worked with Luiza on the same team</div>
+      </div>
+      <div class="testi-card">
+        <p>"We worked together for two years on a financial system where Luiza co-led a key feature. Strong technical range across Java, Spring Boot, Kafka, Kubernetes, and AWS, with a real willingness to push outside her comfort zone to deliver."</p>
+        <div class="testi-name">Oscar Pereiro</div>
+        <div class="testi-role">Software Engineering Manager, Credit Banking · managed Luiza directly</div>
+      </div>
+      <div class="testi-card wide">
+        <p>"An outstanding software engineer with great problem-solving skills and natural leadership — confident, decisive, and always ready to help the team succeed."</p>
+        <div class="testi-name">Yagub Shukurov</div>
+        <div class="testi-role">Software Engineer · worked with Luiza on the same team</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="writing" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Writing</span>
+      <h2>Some things I've written</h2>
+    </div>
+    <div class="writing-grid">
+      <a class="writing-card" href="https://www.linkedin.com/pulse/think-like-tech-become-better-software-engineer-luiza-comanescu-6115f/" target="_blank" rel="noopener">
+        <div class="eyebrow-small">Mindset</div>
+        <h3>Think Like Tech: Become a Better Software Engineer</h3>
+        <p>Uses system design concepts — load balancing, caching, security — as a lens for managing your own energy, focus, and boundaries as an engineer.</p>
+        <div class="read-more">Read on LinkedIn →</div>
+      </a>
+      <a class="writing-card" href="https://www.linkedin.com/pulse/fintech-engineer-interviews-we-doing-wrong-luiza-comanescu-krsjf/" target="_blank" rel="noopener">
+        <div class="eyebrow-small">Hiring</div>
+        <h3>Fintech Engineer Interviews: What Are We Doing Wrong?</h3>
+        <p>A case against fear-based, hierarchical technical interviews — and an argument for collaborative, real-world problem-solving instead of trivia and gatekeeping.</p>
+        <div class="read-more">Read on LinkedIn →</div>
+      </a>
+      <a class="writing-card" href="https://www.linkedin.com/pulse/why-simple-java-wins-over-framework-heavy-development-luiza-comanescu-cycpc/" target="_blank" rel="noopener">
+        <div class="eyebrow-small">Engineering</div>
+        <h3>Why Simple Java Wins Over Framework-Heavy Development</h3>
+        <p>Makes the case that stripping away unnecessary framework layers leads to faster, more maintainable, more scalable Java systems — especially in high-performance fintech contexts.</p>
+        <div class="read-more">Read on LinkedIn →</div>
+      </a>
+    </div>
+    <div class="writing-more">
+      <a href="https://www.linkedin.com/in/luizacomanescu/" target="_blank" rel="noopener">See my full writing on LinkedIn →</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section reveal">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2>Looking for a contractor for backend, migrations, or processing systems?</h2>
+    <p class="sub">Let's talk about what you're building and whether I'm the right fit.</p>
+    <div class="contact-ctas">
+      <a href="https://calendly.com/comanescu-luiza/30min" target="_blank" rel="noopener" class="btn btn-primary">Book a call</a>
+      <a href="mailto:comanescu.luiza@gmail.com" class="btn btn-ghost">Email me</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="mailto:comanescu.luiza@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/luizacomanescu/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/luizacomanescu" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div style="margin-top:12px;">Bucharest, Romania</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    els.forEach(function(el){ observer.observe(el); });
+  })();
+</script>
+
+</body>
+</html>

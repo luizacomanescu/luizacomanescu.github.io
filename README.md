@@ -7,7 +7,6 @@ My personal website — built as a static single-page site.
 ## Sections
 - About & services
 - Selected client work
-- Personal projects
 - Testimonials
 - Writing
 - Contact

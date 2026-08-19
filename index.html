@@ -3,7 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luiza Comanescu — Backend Engineer</title>
+<title>Luiza Comanescu | Java &amp; Spring Boot Contractor for Fintech Backend Systems</title>
+<meta name="description" content="Contract Java backend engineer specializing in Spring Boot, Kafka, and AWS for fintech and payments companies. 5+ years building microservices, APIs, and processing pipelines — one engagement led to a product acquisition. Based in Bucharest, available remote across the UK and EU.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://luizacomanescu.github.io/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Luiza Comanescu | Java &amp; Spring Boot Contractor for Fintech Backend Systems">
+<meta property="og:description" content="Backend engineer for hire. Java, Spring Boot, Kafka, and AWS for fintech and payments systems. 5+ years, one product acquired.">
+<meta property="og:url" content="https://luizacomanescu.github.io/">
+<meta property="og:site_name" content="Luiza Comanescu">
+<meta property="og:image" content="https://luizacomanescu.github.io/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Luiza Comanescu | Java &amp; Spring Boot Contractor">
+<meta name="twitter:description" content="Backend engineer for hire. Java, Spring Boot, Kafka, and AWS for fintech and payments systems.">
+<meta name="twitter:image" content="https://luizacomanescu.github.io/preview.png">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Luiza Comanescu",
+  "url": "https://luizacomanescu.github.io/",
+  "image": "https://luizacomanescu.github.io/preview.png",
+  "jobTitle": "Backend Software Engineer (Contract)",
+  "description": "Contract Java backend engineer specializing in Spring Boot, Kafka, and AWS for fintech and payments companies.",
+  "email": "mailto:comanescu.luiza@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bucharest",
+    "addressCountry": "RO"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/luizacomanescu/",
+    "https://github.com/luizacomanescu"
+  ],
+  "knowsAbout": ["Java", "Spring Boot", "Kafka", "AWS", "AWS Lambda", "Microservices", "Kubernetes", "Docker", "Payment Systems", "Fintech Software Engineering"],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Independent Contractor"
+  }
+}
+</script>
+
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='6'%20fill='%2396654A'/%3E%3C/svg%3E" />
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACjElEQVR4nO2VPWgUQRTH/292du9OkyCpBFHxE7SzE1JsqhAMqAEPGyHE4AWVEDu1mhsEO4tgNMSvkNYoIigEsbnGyjqFgkUUBAuVRO5ud2fmWVwOD/Vyaz5E4X7l8Pb9//P2zXtAmzZt/mcYIAbob+uSCkPJ/EOYAVIqlJtuplEUACbG+rtmhk5sazxTSok/yZnaMTOICKzCUO441DnKDqcd3EGAhCC8A/D0a/Jl8vKDV8tKKaG1dhtmQCkIreEmLxzb7ht6tCXj98TGwriahicEMtJDJTELlcjkx2fmF9KaSFMuAhQmxvozlOBJLuP3LFWiuGqMNY7ZOOY4MW6pEsW+5x0OfPHs7khfN1DrjXUbUCr0tNYuqIqRrmxwdLkSxUQUEMgjgAggEAkiCspRHHdkgz0JeVe11q6oQm8DKtDrAMAxziTWORCaJiVAVmLDDDo1XSj4WpcMWlRhVQMMkNba3Tt7vJOA/Ym1AqDm3xCRsY5AvBNY3AUASqm1G6hjZVkwmt/8V+ckYp9Sxbdskvrzu31u4HVGiiORMQw0Te48T5A19mMuKe8bni1VVzS4Wf6WFSgWa43EcI8D6Qlm2GaxzrHN+ZJA9Hx4tlRVKpSriaczoEtWKQiT5VvfouTN1kwQMHMMhltJzsxgx5xkA+mXo+QzS3OtNjV71z8HCGBAYfzm/JKzfDKx9m1XLhNIKQTVykvSE9SVy/gM/mQMD16cevG+WFSUZhClHsX1yXZjpK+7Q/pXwBi04N1gFoLEByEwX3bR9Ut3Xi7m83lvbm6u6a9aM42LZrpQ8O+fH9g7NTpwYGYozP4uZlPglXX88/nDfN5TKt2zbmQ9+5vqQ0ZrzWjR7W3atPln+Q6zXBxg5Y7u8QAAAABJRU5ErkJggg==" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,10 +123,16 @@
     background:var(--gold);
     color:#1C1815;
     border:1px solid var(--gold);
+    animation:btn-pulse 2.4s ease-in-out infinite;
   }
   .btn-primary:hover{
     background:transparent;
     color:var(--gold);
+    animation:none;
+  }
+  @keyframes btn-pulse{
+    0%, 100%{ box-shadow:0 0 0 0 rgba(150,101,74,0.5); }
+    50%{ box-shadow:0 0 0 8px rgba(150,101,74,0); }
   }
   .btn-ghost{
     background:transparent;
@@ -108,6 +163,8 @@
     background:var(--gold);
     display:inline-block;
     flex-shrink:0;
+    box-shadow:0 0 8px var(--gold);
+    animation:dot-pulse 1.8s ease-in-out infinite;
   }
   .nav-links{display:flex; gap:32px; font-size:14px; align-items:center;}
   .nav-links a{text-decoration:none; color:var(--nude); transition:color 0.2s;}
@@ -146,11 +203,15 @@
     padding:8px 16px;
     border-radius:100px;
     margin-bottom:28px;
+    animation:pill-pulse 2.4s ease-in-out infinite;
   }
-  .available-pill .dot{
-    width:6px; height:6px; border-radius:50%;
-    background:var(--gold);
-    box-shadow:0 0 8px var(--gold);
+  @keyframes pill-pulse{
+    0%, 100%{ box-shadow:0 0 0 0 rgba(150,101,74,0.45); border-color:var(--hairline); }
+    50%{ box-shadow:0 0 0 6px rgba(150,101,74,0); border-color:var(--gold); }
+  }
+  @keyframes dot-pulse{
+    0%, 100%{ transform:scale(1); box-shadow:0 0 8px var(--gold); opacity:1; }
+    50%{ transform:scale(1.4); box-shadow:0 0 14px 4px var(--gold); opacity:0.75; }
   }
   .hero-ctas{
     display:flex; gap:16px; margin-top:40px; flex-wrap:wrap;
@@ -164,6 +225,7 @@
     max-width:45vw;
     opacity:0.9;
     z-index:1;
+    cursor:none;
   }
   @media(max-width:900px){ .signature{display:none;} }
 
@@ -442,6 +504,7 @@
   }
   @media (prefers-reduced-motion: reduce){
     .reveal{opacity:1; transform:none; transition:none;}
+    .available-pill{animation:none;}
   }
 </style>
 </head>
@@ -461,35 +524,37 @@
 </nav>
 
 <section class="hero" id="top">
-  <svg class="signature" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <svg class="signature" id="signatureGraph" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
     <g stroke="#B69B6F" stroke-width="1" fill="none" opacity="0.7">
-      <line x1="250" y1="250" x2="120" y2="140"/>
-      <line x1="250" y1="250" x2="380" y2="120"/>
-      <line x1="250" y1="250" x2="410" y2="270"/>
-      <line x1="250" y1="250" x2="330" y2="400"/>
-      <line x1="250" y1="250" x2="150" y2="380"/>
-      <line x1="250" y1="250" x2="90" y2="260"/>
-      <line x1="120" y1="140" x2="70" y2="90"/>
-      <line x1="380" y1="120" x2="440" y2="80"/>
-      <line x1="410" y1="270" x2="470" y2="300"/>
+      <line id="edge-hub-1" x1="250" y1="250" x2="120" y2="140"/>
+      <line id="edge-hub-2" x1="250" y1="250" x2="380" y2="120"/>
+      <line id="edge-hub-3" x1="250" y1="250" x2="410" y2="270"/>
+      <line id="edge-hub-4" x1="250" y1="250" x2="330" y2="400"/>
+      <line id="edge-hub-5" x1="250" y1="250" x2="150" y2="380"/>
+      <line id="edge-hub-6" x1="250" y1="250" x2="90" y2="260"/>
+      <line id="edge-1-7" x1="120" y1="140" x2="70" y2="90"/>
+      <line id="edge-2-8" x1="380" y1="120" x2="440" y2="80"/>
+      <line id="edge-3-9" x1="410" y1="270" x2="470" y2="300"/>
     </g>
     <g fill="#B69B6F">
-      <circle cx="250" cy="250" r="10"/>
-      <circle cx="120" cy="140" r="5"/>
-      <circle cx="380" cy="120" r="5"/>
-      <circle cx="410" cy="270" r="5"/>
-      <circle cx="330" cy="400" r="5"/>
-      <circle cx="150" cy="380" r="5"/>
-      <circle cx="90" cy="260" r="5"/>
-      <circle cx="70" cy="90" r="3"/>
-      <circle cx="440" cy="80" r="3"/>
-      <circle cx="470" cy="300" r="3"/>
+      <circle id="node-hub" cx="250" cy="250" r="10"/>
+      <circle id="node-1" cx="120" cy="140" r="5"/>
+      <circle id="node-2" cx="380" cy="120" r="5"/>
+      <circle id="node-3" cx="410" cy="270" r="5"/>
+      <circle id="node-4" cx="330" cy="400" r="5"/>
+      <circle id="node-5" cx="150" cy="380" r="5"/>
+      <circle id="node-6" cx="90" cy="260" r="5"/>
+      <circle id="node-7" cx="70" cy="90" r="3"/>
+      <circle id="node-8" cx="440" cy="80" r="3"/>
+      <circle id="node-9" cx="470" cy="300" r="3"/>
     </g>
+    <g id="cursorEdges" stroke="#B69B6F" stroke-width="1" fill="none"></g>
+    <circle id="cursorDot" cx="0" cy="0" r="4" fill="#B69B6F" opacity="0"/>
   </svg>
   <div class="wrap">
-    <div class="available-pill"><span class="dot"></span>Available for contract engagements</div>
-    <h1>Backend engineer for hire. Scalable systems, built to last.</h1>
-    <p class="tagline">I take on contract engagements for teams that need legacy systems modernized, APIs built right, and high-volume processing pipelines running fast and clean.</p>
+    <div class="available-pill">Available for contract engagements</div>
+    <h1>Java &amp; Spring Boot engineer for hire. Scalable systems, built to last.</h1>
+    <p class="tagline">I take on contract engagements for fintech and payments teams that need legacy systems modernized, APIs built right, and high-volume processing pipelines running fast and clean.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn btn-primary">Book a call</a>
       <a href="#work" class="btn btn-ghost">View my work</a>
@@ -505,8 +570,8 @@
         <div class="label">Client engagements</div>
       </div>
       <div class="stat">
-        <div class="num">2</div>
-        <div class="label">Products acquired by other companies</div>
+        <div class="num">1</div>
+        <div class="label">Product acquired by another company</div>
       </div>
       <div class="stat">
         <div class="num">5+</div>
@@ -524,8 +589,8 @@
         <h2>Systems that hold up under real pressure.</h2>
       </div>
       <div class="about-body">
-        <p>I'm a software engineer with ~5 years of experience building scalable backend systems, with a strong focus on Java and Spring Boot. I take on contract engagements for teams that need to migrate legacy systems to microservices, build reliable APIs, or get high-volume processing pipelines running fast and clean.</p>
-        <p>Past engagements have contributed to two product acquisitions — proof that the systems I build hold up under real business pressure, not just in a demo. I care about code the next engineer can actually understand, not just code that works today.</p>
+        <p>I'm a software engineer with ~5 years of experience building scalable backend systems, with a strong focus on Java, Spring Boot, and fintech/payments infrastructure. I take on contract engagements for teams that need to migrate legacy systems to microservices, build reliable APIs, or get high-volume processing pipelines running fast and clean.</p>
+        <p>One past engagement contributed to a product acquisition — proof that the systems I build hold up under real business pressure, not just in a demo. I care about code the next engineer can actually understand, not just code that works today.</p>
       </div>
     </div>
   </div>
@@ -545,12 +610,12 @@
       </div>
       <div class="service-card">
         <div class="num">02</div>
-        <h3>API design & development</h3>
+        <h3>API design &amp; development</h3>
         <p>RESTful services and event-driven systems, built with Kafka for reliable, async communication.</p>
       </div>
       <div class="service-card">
         <div class="num">03</div>
-        <h3>Cloud infrastructure & serverless</h3>
+        <h3>Cloud infrastructure &amp; serverless</h3>
         <p>AWS-native builds — Lambda, SQS/SNS, CloudFormation — designed to scale without babysitting servers.</p>
       </div>
       <div class="service-card">
@@ -575,7 +640,7 @@
         <div class="project-meta">Contract engagement</div>
       </div>
       <div class="project-dates">Oct 2023 – Jan 2025</div>
-      <p class="desc">Designed and built instalment loan capabilities for credit clients, including RESTful APIs and Kafka adapters. Led the migration from a monolithic system to microservices, improving scalability and reliability — a transformation that contributed to the product's acquisition by AstraTech.</p>
+      <p class="desc">Designed and built instalment loan capabilities for credit clients, including RESTful APIs and Kafka adapters. Led the migration from a monolithic system to microservices, improving scalability and reliability across the platform.</p>
       <div class="tags">
         <span class="tag">Java 21</span>
         <span class="tag">Spring Boot</span>
@@ -603,6 +668,7 @@
   </div>
 </section>
 
+<!--
 <section id="projects" class="reveal">
   <div class="wrap">
     <div class="section-head">
@@ -625,6 +691,8 @@
     </div>
   </div>
 </section>
+-->
+
 
 <section id="background" class="reveal">
   <div class="wrap">
@@ -658,7 +726,7 @@
       <div class="testi-card">
         <p>"Hired Luiza straight out of university — one of my best decisions. She's excellent with Java and microservices design, and brings enthusiasm and positive energy to her team every day."</p>
         <div class="testi-name">Mike Charles</div>
-        <div class="testi-role">Architecture, Data, AI & Cloud · managed Luiza directly</div>
+        <div class="testi-role">Architecture, Data, AI &amp; Cloud · managed Luiza directly</div>
       </div>
       <div class="testi-card">
         <p>"We worked together for almost four years on a fintech project. As a frontend developer, I valued her consistent, practical problem-solving — she's reliable, helpful, and generous with her knowledge."</p>
@@ -750,6 +818,195 @@
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
     els.forEach(function(el){ observer.observe(el); });
+  })();
+</script>
+
+<script>
+  (function(){
+    var svg = document.getElementById('signatureGraph');
+    if(!svg) return;
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // base positions, drift amplitude, phase offset and speed per node
+    var nodes = {
+      'node-hub': { x:250, y:250, ampX:4,  ampY:4,  speed:0.25, phase:0.0 },
+      'node-1':   { x:120, y:140, ampX:9,  ampY:7,  speed:0.35, phase:0.3 },
+      'node-2':   { x:380, y:120, ampX:8,  ampY:9,  speed:0.30, phase:1.1 },
+      'node-3':   { x:410, y:270, ampX:10, ampY:6,  speed:0.28, phase:2.0 },
+      'node-4':   { x:330, y:400, ampX:7,  ampY:10, speed:0.32, phase:0.7 },
+      'node-5':   { x:150, y:380, ampX:9,  ampY:8,  speed:0.27, phase:1.6 },
+      'node-6':   { x:90,  y:260, ampX:8,  ampY:9,  speed:0.33, phase:2.4 },
+      'node-7':   { x:70,  y:90,  ampX:6,  ampY:6,  speed:0.40, phase:0.5 },
+      'node-8':   { x:440, y:80,  ampX:6,  ampY:6,  speed:0.38, phase:1.9 },
+      'node-9':   { x:470, y:300, ampX:6,  ampY:6,  speed:0.36, phase:3.0 }
+    };
+
+    var edges = [
+      ['edge-hub-1','node-hub','node-1'],
+      ['edge-hub-2','node-hub','node-2'],
+      ['edge-hub-3','node-hub','node-3'],
+      ['edge-hub-4','node-hub','node-4'],
+      ['edge-hub-5','node-hub','node-5'],
+      ['edge-hub-6','node-hub','node-6'],
+      ['edge-1-7','node-1','node-7'],
+      ['edge-2-8','node-2','node-8'],
+      ['edge-3-9','node-3','node-9']
+    ];
+
+    var nodeEls = {};
+    Object.keys(nodes).forEach(function(id){ nodeEls[id] = document.getElementById(id); });
+    var edgeEls = edges.map(function(e){
+      return { el: document.getElementById(e[0]), a: e[1], b: e[2] };
+    });
+
+    var current = {};
+    // physics offset (repulsion from cursor) layered on top of the base wobble,
+    // per node: {ox, oy} = current displacement, {vx, vy} = velocity
+    var physics = {};
+    Object.keys(nodes).forEach(function(id){
+      current[id] = { x: nodes[id].x, y: nodes[id].y };
+      physics[id] = { ox:0, oy:0, vx:0, vy:0 };
+    });
+
+    // repulsion tuning
+    var REPEL_RADIUS = 120;   // px in SVG viewBox units, how close before a node reacts
+    var REPEL_STRENGTH = 2600; // how hard nodes get pushed
+    var SPRING = 60;          // how strongly a node pulls back toward its resting spot
+    var DAMPING = 8;          // velocity damping so it settles instead of oscillating forever
+
+    var start = performance.now();
+    var lastNow = start;
+
+    function frame(now){
+      var t = (now - start) / 1000; // seconds
+      var dt = Math.min((now - lastNow) / 1000, 0.05); // clamp to avoid big jumps on tab-switch
+      lastNow = now;
+
+      Object.keys(nodes).forEach(function(id){
+        var n = nodes[id];
+        var dx = Math.sin(t * n.speed + n.phase) * n.ampX;
+        var dy = Math.cos(t * n.speed * 0.85 + n.phase) * n.ampY;
+        var baseX = n.x + dx;
+        var baseY = n.y + dy;
+
+        var p = physics[id];
+
+        // repulsion force from cursor, based on current (already-displaced) position
+        if(cursorPos){
+          var curX = baseX + p.ox;
+          var curY = baseY + p.oy;
+          var rx = curX - cursorPos.x;
+          var ry = curY - cursorPos.y;
+          var dist = Math.sqrt(rx*rx + ry*ry) || 0.001;
+          if(dist < REPEL_RADIUS){
+            var force = (1 - dist / REPEL_RADIUS) * REPEL_STRENGTH;
+            p.vx += (rx / dist) * force * dt;
+            p.vy += (ry / dist) * force * dt;
+          }
+        }
+
+        // spring pulling the offset back to zero (resting position)
+        p.vx += -p.ox * SPRING * dt;
+        p.vy += -p.oy * SPRING * dt;
+
+        // damping
+        var dampFactor = Math.max(0, 1 - DAMPING * dt);
+        p.vx *= dampFactor;
+        p.vy *= dampFactor;
+
+        p.ox += p.vx * dt;
+        p.oy += p.vy * dt;
+
+        var x = baseX + p.ox;
+        var y = baseY + p.oy;
+        current[id].x = x;
+        current[id].y = y;
+        if(nodeEls[id]){
+          nodeEls[id].setAttribute('cx', x);
+          nodeEls[id].setAttribute('cy', y);
+        }
+      });
+      edgeEls.forEach(function(e){
+        if(!e.el) return;
+        var a = current[e.a], b = current[e.b];
+        e.el.setAttribute('x1', a.x);
+        e.el.setAttribute('y1', a.y);
+        e.el.setAttribute('x2', b.x);
+        e.el.setAttribute('y2', b.y);
+      });
+      if(cursorPos) updateCursorEdges();
+      requestAnimationFrame(frame);
+    }
+
+    // interactive cursor: a dot that follows the pointer, drawing
+    // temporary edges to nearby nodes as it moves
+    var cursorDot = document.getElementById('cursorDot');
+    var cursorEdgesGroup = document.getElementById('cursorEdges');
+    var THRESHOLD = 130; // px in SVG viewBox units
+    var cursorPos = null;
+    var cursorLineEls = {};
+
+    function svgPoint(evt){
+      var pt = svg.createSVGPoint();
+      pt.x = evt.clientX;
+      pt.y = evt.clientY;
+      var ctm = svg.getScreenCTM();
+      if(!ctm) return null;
+      return pt.matrixTransform(ctm.inverse());
+    }
+
+    function updateCursorEdges(){
+      if(!cursorPos) return;
+      Object.keys(nodes).forEach(function(id){
+        var n = current[id];
+        if(!n) return;
+        var dx = n.x - cursorPos.x;
+        var dy = n.y - cursorPos.y;
+        var dist = Math.sqrt(dx*dx + dy*dy);
+        var line = cursorLineEls[id];
+        if(dist < THRESHOLD){
+          if(!line){
+            line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            cursorEdgesGroup.appendChild(line);
+            cursorLineEls[id] = line;
+          }
+          line.setAttribute('x1', cursorPos.x);
+          line.setAttribute('y1', cursorPos.y);
+          line.setAttribute('x2', n.x);
+          line.setAttribute('y2', n.y);
+          line.setAttribute('opacity', (1 - dist / THRESHOLD) * 0.85);
+        } else if(line){
+          line.parentNode.removeChild(line);
+          delete cursorLineEls[id];
+        }
+      });
+    }
+
+    // Listen on the whole hero section (not just the svg) so the headline/tagline
+    // text sitting on top of the left half of the graph doesn't swallow the
+    // mousemove events before they reach the svg.
+    var hoverTarget = svg.closest('.hero') || svg;
+
+    hoverTarget.addEventListener('mousemove', function(evt){
+      var p = svgPoint(evt);
+      if(!p) return;
+      cursorPos = { x: p.x, y: p.y };
+      cursorDot.setAttribute('cx', p.x);
+      cursorDot.setAttribute('cy', p.y);
+      cursorDot.setAttribute('opacity', 1);
+      updateCursorEdges();
+    });
+
+    hoverTarget.addEventListener('mouseleave', function(){
+      cursorPos = null;
+      cursorDot.setAttribute('opacity', 0);
+      Object.keys(cursorLineEls).forEach(function(id){
+        cursorLineEls[id].parentNode.removeChild(cursorLineEls[id]);
+        delete cursorLineEls[id];
+      });
+    });
+
+    requestAnimationFrame(frame);
   })();
 </script>
 

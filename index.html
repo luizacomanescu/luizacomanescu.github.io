@@ -123,16 +123,10 @@
     background:var(--gold);
     color:#1C1815;
     border:1px solid var(--gold);
-    animation:btn-pulse 2.4s ease-in-out infinite;
   }
   .btn-primary:hover{
     background:transparent;
     color:var(--gold);
-    animation:none;
-  }
-  @keyframes btn-pulse{
-    0%, 100%{ box-shadow:0 0 0 0 rgba(150,101,74,0.5); }
-    50%{ box-shadow:0 0 0 8px rgba(150,101,74,0); }
   }
   .btn-ghost{
     background:transparent;
@@ -164,7 +158,6 @@
     display:inline-block;
     flex-shrink:0;
     box-shadow:0 0 8px var(--gold);
-    animation:dot-pulse 1.8s ease-in-out infinite;
   }
   .nav-links{display:flex; gap:32px; font-size:14px; align-items:center;}
   .nav-links a{text-decoration:none; color:var(--nude); transition:color 0.2s;}
@@ -203,31 +196,10 @@
     padding:8px 16px;
     border-radius:100px;
     margin-bottom:28px;
-    animation:pill-pulse 2.4s ease-in-out infinite;
-  }
-  @keyframes pill-pulse{
-    0%, 100%{ box-shadow:0 0 0 0 rgba(150,101,74,0.45); border-color:var(--hairline); }
-    50%{ box-shadow:0 0 0 6px rgba(150,101,74,0); border-color:var(--gold); }
-  }
-  @keyframes dot-pulse{
-    0%, 100%{ transform:scale(1); box-shadow:0 0 8px var(--gold); opacity:1; }
-    50%{ transform:scale(1.4); box-shadow:0 0 14px 4px var(--gold); opacity:0.75; }
   }
   .hero-ctas{
     display:flex; gap:16px; margin-top:40px; flex-wrap:wrap;
   }
-
-  /* signature svg */
-  .signature{
-    position:absolute;
-    top:120px; right:20px;
-    width:440px;
-    max-width:45vw;
-    opacity:0.9;
-    z-index:1;
-    cursor:none;
-  }
-  @media(max-width:900px){ .signature{display:none;} }
 
   /* STATS BANNER */
   .stats{
@@ -504,7 +476,6 @@
   }
   @media (prefers-reduced-motion: reduce){
     .reveal{opacity:1; transform:none; transition:none;}
-    .available-pill{animation:none;}
   }
 </style>
 </head>
@@ -524,33 +495,6 @@
 </nav>
 
 <section class="hero" id="top">
-  <svg class="signature" id="signatureGraph" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <g stroke="#B69B6F" stroke-width="1" fill="none" opacity="0.7">
-      <line id="edge-hub-1" x1="250" y1="250" x2="120" y2="140"/>
-      <line id="edge-hub-2" x1="250" y1="250" x2="380" y2="120"/>
-      <line id="edge-hub-3" x1="250" y1="250" x2="410" y2="270"/>
-      <line id="edge-hub-4" x1="250" y1="250" x2="330" y2="400"/>
-      <line id="edge-hub-5" x1="250" y1="250" x2="150" y2="380"/>
-      <line id="edge-hub-6" x1="250" y1="250" x2="90" y2="260"/>
-      <line id="edge-1-7" x1="120" y1="140" x2="70" y2="90"/>
-      <line id="edge-2-8" x1="380" y1="120" x2="440" y2="80"/>
-      <line id="edge-3-9" x1="410" y1="270" x2="470" y2="300"/>
-    </g>
-    <g fill="#B69B6F">
-      <circle id="node-hub" cx="250" cy="250" r="10"/>
-      <circle id="node-1" cx="120" cy="140" r="5"/>
-      <circle id="node-2" cx="380" cy="120" r="5"/>
-      <circle id="node-3" cx="410" cy="270" r="5"/>
-      <circle id="node-4" cx="330" cy="400" r="5"/>
-      <circle id="node-5" cx="150" cy="380" r="5"/>
-      <circle id="node-6" cx="90" cy="260" r="5"/>
-      <circle id="node-7" cx="70" cy="90" r="3"/>
-      <circle id="node-8" cx="440" cy="80" r="3"/>
-      <circle id="node-9" cx="470" cy="300" r="3"/>
-    </g>
-    <g id="cursorEdges" stroke="#B69B6F" stroke-width="1" fill="none"></g>
-    <circle id="cursorDot" cx="0" cy="0" r="4" fill="#B69B6F" opacity="0"/>
-  </svg>
   <div class="wrap">
     <div class="available-pill">Available for contract engagements</div>
     <h1>Java &amp; Spring Boot engineer for hire. Scalable systems, built to last.</h1>
@@ -818,195 +762,6 @@
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
     els.forEach(function(el){ observer.observe(el); });
-  })();
-</script>
-
-<script>
-  (function(){
-    var svg = document.getElementById('signatureGraph');
-    if(!svg) return;
-    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    // base positions, drift amplitude, phase offset and speed per node
-    var nodes = {
-      'node-hub': { x:250, y:250, ampX:4,  ampY:4,  speed:0.25, phase:0.0 },
-      'node-1':   { x:120, y:140, ampX:9,  ampY:7,  speed:0.35, phase:0.3 },
-      'node-2':   { x:380, y:120, ampX:8,  ampY:9,  speed:0.30, phase:1.1 },
-      'node-3':   { x:410, y:270, ampX:10, ampY:6,  speed:0.28, phase:2.0 },
-      'node-4':   { x:330, y:400, ampX:7,  ampY:10, speed:0.32, phase:0.7 },
-      'node-5':   { x:150, y:380, ampX:9,  ampY:8,  speed:0.27, phase:1.6 },
-      'node-6':   { x:90,  y:260, ampX:8,  ampY:9,  speed:0.33, phase:2.4 },
-      'node-7':   { x:70,  y:90,  ampX:6,  ampY:6,  speed:0.40, phase:0.5 },
-      'node-8':   { x:440, y:80,  ampX:6,  ampY:6,  speed:0.38, phase:1.9 },
-      'node-9':   { x:470, y:300, ampX:6,  ampY:6,  speed:0.36, phase:3.0 }
-    };
-
-    var edges = [
-      ['edge-hub-1','node-hub','node-1'],
-      ['edge-hub-2','node-hub','node-2'],
-      ['edge-hub-3','node-hub','node-3'],
-      ['edge-hub-4','node-hub','node-4'],
-      ['edge-hub-5','node-hub','node-5'],
-      ['edge-hub-6','node-hub','node-6'],
-      ['edge-1-7','node-1','node-7'],
-      ['edge-2-8','node-2','node-8'],
-      ['edge-3-9','node-3','node-9']
-    ];
-
-    var nodeEls = {};
-    Object.keys(nodes).forEach(function(id){ nodeEls[id] = document.getElementById(id); });
-    var edgeEls = edges.map(function(e){
-      return { el: document.getElementById(e[0]), a: e[1], b: e[2] };
-    });
-
-    var current = {};
-    // physics offset (repulsion from cursor) layered on top of the base wobble,
-    // per node: {ox, oy} = current displacement, {vx, vy} = velocity
-    var physics = {};
-    Object.keys(nodes).forEach(function(id){
-      current[id] = { x: nodes[id].x, y: nodes[id].y };
-      physics[id] = { ox:0, oy:0, vx:0, vy:0 };
-    });
-
-    // repulsion tuning
-    var REPEL_RADIUS = 120;   // px in SVG viewBox units, how close before a node reacts
-    var REPEL_STRENGTH = 2600; // how hard nodes get pushed
-    var SPRING = 60;          // how strongly a node pulls back toward its resting spot
-    var DAMPING = 8;          // velocity damping so it settles instead of oscillating forever
-
-    var start = performance.now();
-    var lastNow = start;
-
-    function frame(now){
-      var t = (now - start) / 1000; // seconds
-      var dt = Math.min((now - lastNow) / 1000, 0.05); // clamp to avoid big jumps on tab-switch
-      lastNow = now;
-
-      Object.keys(nodes).forEach(function(id){
-        var n = nodes[id];
-        var dx = Math.sin(t * n.speed + n.phase) * n.ampX;
-        var dy = Math.cos(t * n.speed * 0.85 + n.phase) * n.ampY;
-        var baseX = n.x + dx;
-        var baseY = n.y + dy;
-
-        var p = physics[id];
-
-        // repulsion force from cursor, based on current (already-displaced) position
-        if(cursorPos){
-          var curX = baseX + p.ox;
-          var curY = baseY + p.oy;
-          var rx = curX - cursorPos.x;
-          var ry = curY - cursorPos.y;
-          var dist = Math.sqrt(rx*rx + ry*ry) || 0.001;
-          if(dist < REPEL_RADIUS){
-            var force = (1 - dist / REPEL_RADIUS) * REPEL_STRENGTH;
-            p.vx += (rx / dist) * force * dt;
-            p.vy += (ry / dist) * force * dt;
-          }
-        }
-
-        // spring pulling the offset back to zero (resting position)
-        p.vx += -p.ox * SPRING * dt;
-        p.vy += -p.oy * SPRING * dt;
-
-        // damping
-        var dampFactor = Math.max(0, 1 - DAMPING * dt);
-        p.vx *= dampFactor;
-        p.vy *= dampFactor;
-
-        p.ox += p.vx * dt;
-        p.oy += p.vy * dt;
-
-        var x = baseX + p.ox;
-        var y = baseY + p.oy;
-        current[id].x = x;
-        current[id].y = y;
-        if(nodeEls[id]){
-          nodeEls[id].setAttribute('cx', x);
-          nodeEls[id].setAttribute('cy', y);
-        }
-      });
-      edgeEls.forEach(function(e){
-        if(!e.el) return;
-        var a = current[e.a], b = current[e.b];
-        e.el.setAttribute('x1', a.x);
-        e.el.setAttribute('y1', a.y);
-        e.el.setAttribute('x2', b.x);
-        e.el.setAttribute('y2', b.y);
-      });
-      if(cursorPos) updateCursorEdges();
-      requestAnimationFrame(frame);
-    }
-
-    // interactive cursor: a dot that follows the pointer, drawing
-    // temporary edges to nearby nodes as it moves
-    var cursorDot = document.getElementById('cursorDot');
-    var cursorEdgesGroup = document.getElementById('cursorEdges');
-    var THRESHOLD = 130; // px in SVG viewBox units
-    var cursorPos = null;
-    var cursorLineEls = {};
-
-    function svgPoint(evt){
-      var pt = svg.createSVGPoint();
-      pt.x = evt.clientX;
-      pt.y = evt.clientY;
-      var ctm = svg.getScreenCTM();
-      if(!ctm) return null;
-      return pt.matrixTransform(ctm.inverse());
-    }
-
-    function updateCursorEdges(){
-      if(!cursorPos) return;
-      Object.keys(nodes).forEach(function(id){
-        var n = current[id];
-        if(!n) return;
-        var dx = n.x - cursorPos.x;
-        var dy = n.y - cursorPos.y;
-        var dist = Math.sqrt(dx*dx + dy*dy);
-        var line = cursorLineEls[id];
-        if(dist < THRESHOLD){
-          if(!line){
-            line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            cursorEdgesGroup.appendChild(line);
-            cursorLineEls[id] = line;
-          }
-          line.setAttribute('x1', cursorPos.x);
-          line.setAttribute('y1', cursorPos.y);
-          line.setAttribute('x2', n.x);
-          line.setAttribute('y2', n.y);
-          line.setAttribute('opacity', (1 - dist / THRESHOLD) * 0.85);
-        } else if(line){
-          line.parentNode.removeChild(line);
-          delete cursorLineEls[id];
-        }
-      });
-    }
-
-    // Listen on the whole hero section (not just the svg) so the headline/tagline
-    // text sitting on top of the left half of the graph doesn't swallow the
-    // mousemove events before they reach the svg.
-    var hoverTarget = svg.closest('.hero') || svg;
-
-    hoverTarget.addEventListener('mousemove', function(evt){
-      var p = svgPoint(evt);
-      if(!p) return;
-      cursorPos = { x: p.x, y: p.y };
-      cursorDot.setAttribute('cx', p.x);
-      cursorDot.setAttribute('cy', p.y);
-      cursorDot.setAttribute('opacity', 1);
-      updateCursorEdges();
-    });
-
-    hoverTarget.addEventListener('mouseleave', function(){
-      cursorPos = null;
-      cursorDot.setAttribute('opacity', 0);
-      Object.keys(cursorLineEls).forEach(function(id){
-        cursorLineEls[id].parentNode.removeChild(cursorLineEls[id]);
-        delete cursorLineEls[id];
-      });
-    });
-
-    requestAnimationFrame(frame);
   })();
 </script>
 

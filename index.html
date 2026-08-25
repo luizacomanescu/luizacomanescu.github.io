@@ -123,10 +123,16 @@
     background:var(--gold);
     color:#1C1815;
     border:1px solid var(--gold);
+    animation:btn-pulse 2.4s ease-in-out infinite;
   }
   .btn-primary:hover{
     background:transparent;
     color:var(--gold);
+    animation:none;
+  }
+  @keyframes btn-pulse{
+    0%, 100%{ box-shadow:0 0 0 0 rgba(150,101,74,0.5); }
+    50%{ box-shadow:0 0 0 8px rgba(150,101,74,0); }
   }
   .btn-ghost{
     background:transparent;
@@ -158,6 +164,11 @@
     display:inline-block;
     flex-shrink:0;
     box-shadow:0 0 8px var(--gold);
+    animation:dot-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes dot-pulse{
+    0%, 100%{ box-shadow:0 0 8px var(--gold); transform:scale(1); }
+    50%{ box-shadow:0 0 14px 4px var(--gold); transform:scale(1.2); }
   }
   .nav-links{display:flex; gap:32px; font-size:14px; align-items:center;}
   .nav-links a{text-decoration:none; color:var(--nude); transition:color 0.2s;}
@@ -196,6 +207,11 @@
     padding:8px 16px;
     border-radius:100px;
     margin-bottom:28px;
+    animation:pill-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pill-pulse{
+    0%, 100%{ box-shadow:0 0 0 0 rgba(150,101,74,0.35); }
+    50%{ box-shadow:0 0 0 6px rgba(150,101,74,0); }
   }
   .hero-ctas{
     display:flex; gap:16px; margin-top:40px; flex-wrap:wrap;
@@ -476,6 +492,7 @@
   }
   @media (prefers-reduced-motion: reduce){
     .reveal{opacity:1; transform:none; transition:none;}
+    .nav-dot, .available-pill, .btn-primary{animation:none;}
   }
 </style>
 </head>

@@ -52,6 +52,46 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What kind of engagements do you take on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contract work for fintech and payments teams — monolith-to-microservices migrations, API and event-driven system design, and high-volume processing pipelines. Typically 3–12 month engagements, though shorter or longer work can be scoped depending on the need."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work remotely?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Based in Bucharest, working remote across the UK and EU, with working-hours overlap for daily standups and pairing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your core technology stack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Java (11–21) and Spring Boot, Kafka for event-driven systems, AWS (Lambda, SQS/SNS, CloudFormation) for cloud-native builds, plus Docker and Kubernetes in production."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does an engagement usually start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A free 30-minute call to discuss the project, the bottleneck, and fit — followed by scope and availability if it's a match."
+      }
+    }
+  ]
+}
+</script>
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Ccircle%20cx='16'%20cy='16'%20r='6'%20fill='%2396654A'/%3E%3C/svg%3E" />
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACjElEQVR4nO2VPWgUQRTH/292du9OkyCpBFHxE7SzE1JsqhAMqAEPGyHE4AWVEDu1mhsEO4tgNMSvkNYoIigEsbnGyjqFgkUUBAuVRO5ud2fmWVwOD/Vyaz5E4X7l8Pb9//P2zXtAmzZt/mcYIAbob+uSCkPJ/EOYAVIqlJtuplEUACbG+rtmhk5sazxTSok/yZnaMTOICKzCUO441DnKDqcd3EGAhCC8A/D0a/Jl8vKDV8tKKaG1dhtmQCkIreEmLxzb7ht6tCXj98TGwriahicEMtJDJTELlcjkx2fmF9KaSFMuAhQmxvozlOBJLuP3LFWiuGqMNY7ZOOY4MW6pEsW+5x0OfPHs7khfN1DrjXUbUCr0tNYuqIqRrmxwdLkSxUQUEMgjgAggEAkiCspRHHdkgz0JeVe11q6oQm8DKtDrAMAxziTWORCaJiVAVmLDDDo1XSj4WpcMWlRhVQMMkNba3Tt7vJOA/Ym1AqDm3xCRsY5AvBNY3AUASqm1G6hjZVkwmt/8V+ckYp9Sxbdskvrzu31u4HVGiiORMQw0Te48T5A19mMuKe8bni1VVzS4Wf6WFSgWa43EcI8D6Qlm2GaxzrHN+ZJA9Hx4tlRVKpSriaczoEtWKQiT5VvfouTN1kwQMHMMhltJzsxgx5xkA+mXo+QzS3OtNjV71z8HCGBAYfzm/JKzfDKx9m1XLhNIKQTVykvSE9SVy/gM/mQMD16cevG+WFSUZhClHsX1yXZjpK+7Q/pXwBi04N1gFoLEByEwX3bR9Ut3Xi7m83lvbm6u6a9aM42LZrpQ8O+fH9g7NTpwYGYozP4uZlPglXX88/nDfN5TKt2zbmQ9+5vqQ0ZrzWjR7W3atPln+Q6zXBxg5Y7u8QAAAABJRU5ErkJggg==" />
@@ -123,16 +163,18 @@
     background:var(--gold);
     color:#1C1815;
     border:1px solid var(--gold);
-    animation:btn-pulse 2.4s ease-in-out infinite;
+    box-shadow:0 0 0 0 rgba(150,101,74,0);
   }
   .btn-primary:hover{
-    background:transparent;
-    color:var(--gold);
-    animation:none;
+    background:#AC7D5C;
+    border-color:#AC7D5C;
+    color:#1C1815;
+    transform:translateY(-2px);
+    box-shadow:0 10px 28px -8px rgba(150,101,74,0.55);
   }
-  @keyframes btn-pulse{
-    0%, 100%{ box-shadow:0 0 8px rgba(150,101,74,0.6); transform:scale(1); }
-    50%{ box-shadow:0 0 16px 4px rgba(150,101,74,0.9); transform:scale(1.03); }
+  .btn-primary:active{
+    transform:translateY(0);
+    box-shadow:0 4px 12px -4px rgba(150,101,74,0.5);
   }
   .btn-ghost{
     background:transparent;
@@ -142,7 +184,9 @@
   .btn-ghost:hover{
     border-color:var(--gold);
     color:var(--gold);
+    transform:translateY(-2px);
   }
+  .btn-ghost:active{ transform:translateY(0); }
 
   /* NAV */
   nav{
@@ -164,11 +208,6 @@
     display:inline-block;
     flex-shrink:0;
     box-shadow:0 0 8px var(--gold);
-    animation:dot-pulse 2.4s ease-in-out infinite;
-  }
-  @keyframes dot-pulse{
-    0%, 100%{ box-shadow:0 0 8px var(--gold); transform:scale(1); }
-    50%{ box-shadow:0 0 14px 4px var(--gold); transform:scale(1.2); }
   }
   .nav-links{display:flex; gap:32px; font-size:14px; align-items:center;}
   .nav-links a{text-decoration:none; color:var(--nude); transition:color 0.2s;}
@@ -198,7 +237,7 @@
   .available-pill{
     display:inline-flex;
     align-items:center;
-    gap:8px;
+    gap:9px;
     font-size:12px;
     letter-spacing:0.08em;
     text-transform:uppercase;
@@ -207,11 +246,14 @@
     padding:8px 16px;
     border-radius:100px;
     margin-bottom:28px;
-    animation:pill-pulse 2.4s ease-in-out infinite;
   }
-  @keyframes pill-pulse{
-    0%, 100%{ box-shadow:0 0 8px rgba(150,101,74,0.6); transform:scale(1); }
-    50%{ box-shadow:0 0 16px 4px rgba(150,101,74,0.9); transform:scale(1.03); }
+  .available-pill::before{
+    content:'';
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 6px var(--gold);
+    flex-shrink:0;
   }
   .hero-ctas{
     display:flex; gap:16px; margin-top:40px; flex-wrap:wrap;
@@ -274,6 +316,12 @@
     padding:40px;
     border-radius:16px;
     border:1px solid var(--hairline);
+    transition:transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-4px);
+    border-color:var(--gold);
+    box-shadow:0 16px 36px -16px rgba(0,0,0,0.45);
   }
   .service-card .num{
     font-family:'Fraunces', serif;
@@ -300,6 +348,12 @@
     padding:40px;
     margin-bottom:24px;
     border-radius:16px;
+    transition:transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .project-card:hover{
+    transform:translateY(-4px);
+    border-color:var(--gold);
+    box-shadow:0 16px 36px -16px rgba(0,0,0,0.45);
   }
   .project-head{
     display:flex;
@@ -379,6 +433,12 @@
     border:1px solid var(--hairline);
     padding:32px;
     border-radius:16px;
+    transition:transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .testi-card:hover{
+    transform:translateY(-4px);
+    border-color:var(--gold);
+    box-shadow:0 16px 36px -16px rgba(0,0,0,0.45);
   }
   .testi-card p{
     color:var(--nude);
@@ -398,6 +458,28 @@
   }
   .testi-card.wide{grid-column:1 / -1;}
 
+  /* FAQ */
+  .faq-list{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:16px;
+  }
+  @media(max-width:700px){ .faq-list{grid-template-columns:1fr;} }
+  .faq-item{
+    background:var(--bg-raised);
+    border:1px solid var(--hairline);
+    border-radius:16px;
+    padding:32px;
+    transition:transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .faq-item:hover{
+    transform:translateY(-4px);
+    border-color:var(--gold);
+    box-shadow:0 16px 36px -16px rgba(0,0,0,0.45);
+  }
+  .faq-item h3{font-size:17px; margin-bottom:12px;}
+  .faq-item p{color:var(--muted); font-size:14.5px; font-weight:300; margin:0;}
+
   /* CONTACT */
   .contact-section{text-align:center;}
   .contact-section h2{font-size:clamp(30px,5vw,44px); max-width:640px; margin:0 auto;}
@@ -407,6 +489,12 @@
   }
   .contact-ctas{
     display:flex; justify-content:center; gap:16px; flex-wrap:wrap;
+  }
+  .contact-trust{
+    margin:24px 0 0 0;
+    font-size:13px;
+    color:var(--muted);
+    letter-spacing:0.02em;
   }
   footer{
     border-top:1px solid var(--hairline);
@@ -442,7 +530,8 @@
   }
   .writing-card:hover{
     border-color:var(--gold);
-    transform:translateY(-2px);
+    transform:translateY(-4px);
+    box-shadow:0 16px 36px -16px rgba(0,0,0,0.45);
   }
   .writing-card .eyebrow-small{
     font-size:11px;
@@ -490,9 +579,38 @@
     opacity:1;
     transform:translateY(0);
   }
+
+  /* STAGGERED GRID REVEAL */
+  .stagger > *{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.is-visible .stagger > *{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .stagger > *:nth-child(1){ transition-delay:0s; }
+  .stagger > *:nth-child(2){ transition-delay:0.08s; }
+  .stagger > *:nth-child(3){ transition-delay:0.16s; }
+  .stagger > *:nth-child(4){ transition-delay:0.24s; }
+  .stagger > *:nth-child(5){ transition-delay:0.32s; }
+  .stagger > *:nth-child(6){ transition-delay:0.4s; }
+
+  /* HERO ENTRANCE (plays once on load) */
+  @keyframes fade-up{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .hero .available-pill{ animation:fade-up 0.7s ease both; }
+  .hero h1{ animation:fade-up 0.7s ease 0.1s both; }
+  .hero .tagline{ animation:fade-up 0.7s ease 0.2s both; }
+  .hero-ctas{ animation:fade-up 0.7s ease 0.3s both; }
+
   @media (prefers-reduced-motion: reduce){
-    .reveal{opacity:1; transform:none; transition:none;}
-    .nav-dot, .available-pill, .btn-primary{animation:none;}
+    .reveal, .stagger > *{opacity:1; transform:none; transition:none;}
+    .hero .available-pill, .hero h1, .hero .tagline, .hero-ctas{animation:none;}
+    .btn-primary:hover, .btn-ghost:hover, .service-card:hover, .project-card:hover, .testi-card:hover, .writing-card:hover{transform:none;}
   }
 </style>
 </head>
@@ -506,7 +624,8 @@
       <a href="#work">Work</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#writing">Writing</a>
-      <a href="#contact" class="btn btn-primary">Book a call</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-primary">Book a free call</a>
     </div>
   </div>
 </nav>
@@ -517,7 +636,7 @@
     <h1>Java &amp; Spring Boot engineer for hire. Scalable systems, built to last.</h1>
     <p class="tagline">I take on contract engagements for fintech and payments teams that need legacy systems modernized, APIs built right, and high-volume processing pipelines running fast and clean.</p>
     <div class="hero-ctas">
-      <a href="#contact" class="btn btn-primary">Book a call</a>
+      <a href="#contact" class="btn btn-primary">Book a free call</a>
       <a href="#work" class="btn btn-ghost">View my work</a>
     </div>
   </div>
@@ -563,7 +682,7 @@
       <span class="eyebrow">Services</span>
       <h2>What I take on</h2>
     </div>
-    <div class="services-grid">
+    <div class="services-grid stagger">
       <div class="service-card">
         <div class="num">01</div>
         <h3>Monolith-to-microservices migration</h3>
@@ -678,7 +797,7 @@
       <span class="eyebrow">Testimonials</span>
       <h2>What people I've worked with say</h2>
     </div>
-    <div class="testi-grid">
+    <div class="testi-grid stagger">
       <div class="testi-card">
         <p>"Worked with Luiza across two companies over three years. She's a creative, energetic engineer, strong at both building new features and diagnosing tricky bugs, and a collaborative leader who cares about the whole team's wellbeing."</p>
         <div class="testi-name">Rob MacMillan</div>
@@ -714,7 +833,7 @@
       <span class="eyebrow">Writing</span>
       <h2>Some things I've written</h2>
     </div>
-    <div class="writing-grid">
+    <div class="writing-grid stagger">
       <a class="writing-card" href="https://www.linkedin.com/pulse/think-like-tech-become-better-software-engineer-luiza-comanescu-6115f/" target="_blank" rel="noopener">
         <div class="eyebrow-small">Mindset</div>
         <h3>Think Like Tech: Become a Better Software Engineer</h3>
@@ -740,15 +859,43 @@
   </div>
 </section>
 
+<section id="faq" class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-list stagger">
+      <div class="faq-item">
+        <h3>What kind of engagements do you take on?</h3>
+        <p>Contract work for fintech and payments teams — monolith-to-microservices migrations, API and event-driven system design, and high-volume processing pipelines. Typically 3–12 month engagements, though I'll scope shorter or longer work depending on what you need.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you work remotely?</h3>
+        <p>Yes. I'm based in Bucharest and work remote across the UK and EU, with working-hours overlap for daily standups and pairing.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's your core stack?</h3>
+        <p>Java (11–21) and Spring Boot, Kafka for event-driven systems, AWS (Lambda, SQS/SNS, CloudFormation) for cloud-native builds, plus Docker and Kubernetes in production.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does an engagement usually start?</h3>
+        <p>A free 30-minute call to talk through what you're building, where the bottleneck is, and whether I'm the right fit — no pitch deck, no obligation. If it's a match, I'll follow up with scope and availability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" class="contact-section reveal">
   <div class="wrap">
     <span class="eyebrow">Contact</span>
     <h2>Looking for a contractor for backend, migrations, or processing systems?</h2>
     <p class="sub">Let's talk about what you're building and whether I'm the right fit.</p>
     <div class="contact-ctas">
-      <a href="https://calendly.com/comanescu-luiza/30min" target="_blank" rel="noopener" class="btn btn-primary">Book a call</a>
+      <a href="https://calendly.com/comanescu-luiza/30min" target="_blank" rel="noopener" class="btn btn-primary">Book a free call</a>
       <a href="mailto:comanescu.luiza@gmail.com" class="btn btn-ghost">Email me</a>
     </div>
+    <p class="contact-trust">30 minutes · no pitch deck · usually reply within a day</p>
   </div>
 </section>
 
